@@ -1,13 +1,18 @@
-import reducers from '../reducer'
 import {
     createStore,
     compose,
-    applyMiddleware
+    applyMiddleware,
+    combineReducers
 } from 'redux'
 import thunk from 'redux-thunk'
-const store = createStore(
-    reducers, compose(
+import user from '../redux/user.redux'
+
+//结合reducer
+const rootReducer=combineReducers({user});
+
+//返回 仓库
+export default createStore(
+    rootReducer, compose(
         applyMiddleware(thunk),
         window.devToolsExtension ? window.devToolsExtension() : f => f
     ))
-export default store
