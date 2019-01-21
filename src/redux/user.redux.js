@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {getRedireactPath} from '../utils/index'
-//actionTypes
 
+//actionTypes
 const AUTH_SUCCESS='auth_success'
 const LODE_DATA='load_data'
 const ERROR_MSG='error_msg';
@@ -12,6 +12,7 @@ const initState={
     user:'',
     type:'', //身份
 }
+
 //reducer
 export default (state=initState,action)=>{
     switch(action.type){

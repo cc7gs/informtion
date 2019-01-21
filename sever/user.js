@@ -9,9 +9,9 @@ const Router = express.Router();
 Router.get('/list', (req, res) => {
   //删除所有文件
   //  User.remove({},function(error,doc){})
-
-  User.find({}, (err, doc) => {
-    return res.json(doc);
+  const {type}=req.query
+  User.find({type}, (err, doc) => {
+    return res.json({code:0,data:doc});
   });
 });
 //注册

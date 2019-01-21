@@ -36,6 +36,7 @@ class BossInfo extends React.Component {
     return (
       <div>
        {redirectTo&&pathname!==redirectTo ? <Redirect to={redirectTo} /> : null}
+       
         <NavBar mode="dark">Boss信息页面</NavBar>
         <AvatarSelector selectAvatar={this.selectAvatar}></AvatarSelector>
         <InputItem onChange={v => this.handlechange('title', v)}>

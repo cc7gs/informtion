@@ -2,13 +2,11 @@ import React from 'react'
 import { NavBar } from 'antd-mobile';
 import {connect} from 'react-redux'
 import {Route,Switch} from 'react-router-dom'
-import {NavLinkBar} from '../../component'
+import {NavLinkBar,Boss,Cow} from '../../component'
 class DashBoard extends React.Component{
     
     render(){
-        const {user}=this.props;
-        console.log(user);
-        
+        const {user}=this.props;        
         const {pathname}=this.props.location;
         const navList=[
             {
@@ -16,7 +14,7 @@ class DashBoard extends React.Component{
 				text:'牛人',
 				icon:'boss',
 				title:'牛人列表',
-				component:Cow,
+				component:Boss,
 				hide:user.type==='cow'
             },
             {
@@ -24,7 +22,7 @@ class DashBoard extends React.Component{
 				text:'Boss',
 				icon:'job',
 				title:'Boss列表',
-				component:Boss ,
+				component:Cow,
 				hide:user.type==='boss'
             },
             {
@@ -49,7 +47,7 @@ class DashBoard extends React.Component{
                     <Switch>
                         {
                             navList.map(item=>(
-                                <Route path={item.path} key={item.path} component={item.component}></Route>
+                                <Route path={item.path} key={item.title} component={item.component}></Route>
                             ))
                         }
                     </Switch>
@@ -64,12 +62,7 @@ const mapStateProps=(state)=>({
 })
 export default connect(mapStateProps,null)(DashBoard);
 
-function Boss(){
-    return 'boss'
-}
-function Cow(){
-    return 'cow'
-}
+
 function Msg(){
     return 'msg'
 }

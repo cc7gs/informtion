@@ -8,7 +8,7 @@
 export function getRedireactPath({type,avatar}){
 //     user.type: /boss /row
 //     user.avatar /bossinfo /rowinfo
-    let url=(type==='boss')?'/boss':'/row'
+    let url=(type==='boss')?'/boss':'/cow'
     if(!avatar){
         url+='info'
     }
