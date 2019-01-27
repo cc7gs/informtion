@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { AvatarSelector } from '../../component';
 import { update } from '../../redux/user.redux';
 import { connect } from 'react-redux';
-class RowInfo extends React.Component {
+class CowInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -62,4 +62,4 @@ const mapDispatchProps = {
 export default connect(
   mapStateProps,
   mapDispatchProps
-)(RowInfo);
+)(CowInfo);

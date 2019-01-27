@@ -15,7 +15,8 @@ const initState={
     }    
  }
  
- function userList(data){
+ function userList(userinfo){
+    const {password,...data}=userinfo;  
      return {type:CHART_LIST,payload:data};
  }
 

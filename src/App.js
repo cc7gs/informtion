@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import {Login,Register,BossInfo,RowInfo,DashBoard} from './container';
+import {Login,Register,BossInfo,CowInfo,DashBoard} from './container';
 import {AuthRoute} from './component';
 import './config'
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/bossinfo" component={BossInfo} />
-            <Route path="/rowinfo" component={RowInfo} />
+            <Route path="/cowinfo" component={CowInfo} />
             <Route component={DashBoard}></Route>
           </Switch>
         </div>
